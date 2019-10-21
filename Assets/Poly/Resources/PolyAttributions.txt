@@ -1,0 +1,13 @@
+This project uses the following items from Poly (http://poly.google.com):
+
+Title: Seed - Prototype
+Author: Matt Hoffman
+URL: https://poly.google.com/view/9eN1YZ67nMr
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Tree - Full Grown
+Author: Matt Hoffman
+URL: https://poly.google.com/view/2O0aiggUmvA
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
