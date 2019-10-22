@@ -6,33 +6,55 @@ public class GameManager : MonoBehaviour
 {
     #region VARIABLES
 
+    public static GameManager Instance;
+
     public bool gameStart;
 
-    public float loveLevel { get; private set; }
-    public float waterLevel { get; private set; }
-    public float mineralLevel { get; private set; }
-    public float sunLevel { get; private set; }
+    public enum MeterType
+    {
+        Love,
+        Water,
+        Mineral,
+        Sun
+    }
+
+    public float loveMeter { get; private set; }
+    public float waterMeter { get; private set; }
+    public float mineralMeter { get; private set; }
+    public float sunMeter { get; private set; }
 
     public int growthPhase { get; private set; }
 
-    private float loveLevelDepletion;
-    private float waterLevelDepletion;
-    private float mineralLevelDepletion;
-    private float sunLevelDepletion;
-
-    private void Start()
-    {
-        
-    }
+    private float loveDepletion;
+    private float waterDepletion;
+    private float mineralDepletion;
+    private float sunDepletion;
 
     #endregion
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+
+    }
+
     private void Update()
     {
-        loveLevel -= Time.deltaTime * loveLevelDepletion;
-        waterLevel -= Time.deltaTime * waterLevelDepletion;
-        mineralLevel -= Time.deltaTime * mineralLevelDepletion;
-        sunLevel -= Time.deltaTime * sunLevelDepletion;
+        loveMeter -= Time.deltaTime * loveDepletion;
+        waterMeter -= Time.deltaTime * waterDepletion;
+        mineralMeter -= Time.deltaTime * mineralDepletion;
+        sunMeter -= Time.deltaTime * sunDepletion;
     }
 
     private void GrowTree()
@@ -62,34 +84,32 @@ public class GameManager : MonoBehaviour
 
     private void ChangeDepletionVariables(float _loveDepletion, float _waterDepletion, float _mineralDepletion, float _sunDepletion)
     {
-        loveLevelDepletion = _loveDepletion;
-        waterLevelDepletion = _waterDepletion;
-        mineralLevelDepletion = _mineralDepletion;
-        sunLevelDepletion = _sunDepletion;      
+        loveDepletion = _loveDepletion;
+        waterDepletion = _waterDepletion;
+        mineralDepletion = _mineralDepletion;
+        sunDepletion = _sunDepletion;      
     }
-
     
-
     #region CHANGE LEVEL METHODS
 
     public void ChangeLoveLevel(float _num)
     {
-        loveLevel += _num;
+        loveMeter += _num;
     }
 
     public void ChangeWaterLevel(float _num)
     {
-        loveLevel += _num;
+        loveMeter += _num;
     }
 
     public void ChangeMineralLevel(float _num)
     {
-        loveLevel += _num;
+        loveMeter += _num;
     }
 
     public void ChangeSunLevel(float _num)
     {
-        loveLevel += _num;
+        loveMeter += _num;
     }
 
     #endregion
