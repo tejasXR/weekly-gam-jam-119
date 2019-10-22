@@ -1,13 +1,37 @@
 This project uses the following items from Poly (http://poly.google.com):
 
+Title: Root System - Grown
+Author: Matt Hoffman
+URL: https://poly.google.com/view/7KO2v9d_xmE
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Sapling - Prototype
+Author: Matt Hoffman
+URL: https://poly.google.com/view/7uvchW_fCCz
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: Seed - Prototype
 Author: Matt Hoffman
 URL: https://poly.google.com/view/9eN1YZ67nMr
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
+Title: Sprout - Prototype
+Author: Matt Hoffman
+URL: https://poly.google.com/view/7QOWwCcemoJ
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: Tree - Full Grown
 Author: Matt Hoffman
 URL: https://poly.google.com/view/2O0aiggUmvA
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Tree Growing Scene (Prototype)
+Author: Matt Hoffman
+URL: https://poly.google.com/view/feqrx4UPLd2
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
