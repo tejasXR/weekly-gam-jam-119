@@ -1,9 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region EVENTS
+
+    public static event Action TreeGrowCallback;
+
+    public void OnTreeGrow()
+    {
+        TreeGrowCallback?.Invoke();
+    }
+
+    #endregion
+
     #region VARIABLES
 
     public static GameManager Instance;
@@ -46,15 +58,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
+        ChangeDepletionVariables(2F, 2F, 2F, 2F);
     }
 
     private void Update()
     {
-        loveMeter -= Time.deltaTime * loveDepletion;
-        waterMeter -= Time.deltaTime * waterDepletion;
-        mineralMeter -= Time.deltaTime * mineralDepletion;
-        sunMeter -= Time.deltaTime * sunDepletion;
+        if (loveMeter > 0)
+            loveMeter -= Time.deltaTime * loveDepletion;
+
+        if (waterMeter > 0)
+            waterMeter -= Time.deltaTime * waterDepletion;
+
+        if (mineralMeter > 0)
+            mineralMeter -= Time.deltaTime * mineralDepletion;
+        
+        if (sunMeter > 0)
+            sunMeter -= Time.deltaTime * sunDepletion;
     }
 
     private void GrowTree()
@@ -65,7 +84,7 @@ public class GameManager : MonoBehaviour
         {
             // Seed
             case 0:
-                ChangeDepletionVariables(.1F, .1F, .1F, .1F);
+                ChangeDepletionVariables(3F, 3F, 3F, 3F);
                 break;
 
             // Sprout
@@ -80,6 +99,8 @@ public class GameManager : MonoBehaviour
             case 3:
                 break;
         }
+
+        OnTreeGrow();
     }
 
     private void ChangeDepletionVariables(float _loveDepletion, float _waterDepletion, float _mineralDepletion, float _sunDepletion)

@@ -22,6 +22,8 @@ public class ClickableObject : MonoBehaviour
     {
         ClickedEvent.Invoke();
         OnClicked();
+
+        Debug.Log("You clicked on " + gameObject.name);
     }
 
     public UnityEvent ClickedEvent;
