@@ -1,5 +1,11 @@
 This project uses the following items from Poly (http://poly.google.com):
 
+Title: Bee
+Author: Matt Hoffman
+URL: https://poly.google.com/view/13FFKqlx7gH
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: Root System - Grown
 Author: Matt Hoffman
 URL: https://poly.google.com/view/7KO2v9d_xmE
@@ -27,6 +33,12 @@ https://creativecommons.org/licenses/by/3.0/legalcode
 Title: Tree - Full Grown
 Author: Matt Hoffman
 URL: https://poly.google.com/view/2O0aiggUmvA
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Tree Growing Scene #2
+Author: Matt Hoffman
+URL: https://poly.google.com/view/3hw2M0Fda5E
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
