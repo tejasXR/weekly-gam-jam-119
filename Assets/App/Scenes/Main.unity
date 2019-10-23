@@ -2416,7 +2416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meterType: 0
-  increaseAmount: 1
+  increaseAmount: 7.58
 --- !u!114 &1805574710
 MonoBehaviour:
   m_ObjectHideFlags: 0
