@@ -9,6 +9,8 @@ public class MeterManager : MonoBehaviour
     public Meter mineralMeter;
     public Meter sunMeter;
 
+    public Animator interfaceAnim;
+
     private void Update()
     {
         switch (GameManager.Instance.growthPhase)
@@ -17,6 +19,7 @@ public class MeterManager : MonoBehaviour
                 if (loveMeter.filled)
                 {
                     GameManager.Instance.GrowTree();
+                    interfaceAnim.SetTrigger("next");
                 }
                 break;
 
