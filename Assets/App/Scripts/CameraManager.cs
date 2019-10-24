@@ -10,7 +10,13 @@ public class CameraPositions
 }
 
 public class CameraManager : MonoBehaviour
-{    
+{
+
+    public List<CameraPositions> cameraPositions = new List<CameraPositions>();
+    public float cameraMovSpeed;
+    private int currentCameraView = 0;
+
+
     private void OnEnable()
     {
         GameManager.TreeGrowCallback += ChangeCamera;
@@ -21,14 +27,12 @@ public class CameraManager : MonoBehaviour
         GameManager.TreeGrowCallback -= ChangeCamera;
     }
 
-    public List<CameraPositions> cameraPositions = new List<CameraPositions>();
-
-    private int currentCameraView = 0;
+    
 
     private void Update()
     {
-        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPositions[currentCameraView].position, Time.deltaTime * 5F);
-        Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, Quaternion.Euler(cameraPositions[currentCameraView].rotation), Time.deltaTime * 5F);
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPositions[currentCameraView].position, Time.deltaTime * cameraMovSpeed);
+        Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, Quaternion.Euler(cameraPositions[currentCameraView].rotation), Time.deltaTime * cameraMovSpeed);
     }
 
     private void ChangeCamera()

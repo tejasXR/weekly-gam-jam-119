@@ -6,6 +6,18 @@ URL: https://poly.google.com/view/13FFKqlx7gH
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
+Title: Game Jam Icons
+Author: Matt Hoffman
+URL: https://poly.google.com/view/30DY9V6qDMI
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Level Meter - Game Jam Menu
+Author: Matt Hoffman
+URL: https://poly.google.com/view/5GuRDrKl9uJ
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: Root System - Grown
 Author: Matt Hoffman
 URL: https://poly.google.com/view/7KO2v9d_xmE

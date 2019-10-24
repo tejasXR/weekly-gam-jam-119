@@ -39,18 +39,14 @@ public class Meter : MonoBehaviour
 
         meterFill.rectTransform.offsetMax = rT.offsetMax;
 
-        CheckMeterFull();
+        CheckMeterFull(_meterVariable);
     }
 
-    private void CheckMeterFull()
-    {       
-        if (meterFill.rectTransform.offsetMax.x < 2)
-        {
+    private void CheckMeterFull(float _meterVariable)
+    {
+        if (_meterVariable > 245)
             filled = true;
-        }
         else
-        {
-            filled = false;
-        }
-    }
+            filled = false;               
+    }    
 }

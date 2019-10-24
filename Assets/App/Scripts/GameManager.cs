@@ -62,18 +62,69 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (loveMeter > 0)
+    {       
+        if (loveMeter > 250)
+        {
+            loveMeter = 250;
+        }            
+        else if (loveMeter > 0)
+        {
             loveMeter -= Time.deltaTime * loveDepletion;
+        }
 
-        if (waterMeter > 0)
+        if (waterMeter > 250)
+        {
+            waterMeter = 250;
+        }
+        else if (waterMeter > 0)
+        {
             waterMeter -= Time.deltaTime * waterDepletion;
+        }
 
-        if (mineralMeter > 0)
+        if (mineralMeter > 250)
+        {
+            mineralMeter = 250;
+        }
+        else if (mineralMeter > 0)
+        {
             mineralMeter -= Time.deltaTime * mineralDepletion;
+        }
+    }
+
+    public void ResetMeter(MeterType _meterType)
+    {
+        switch (_meterType)
+        {
+            case MeterType.Love:
+                loveMeter = 0;
+                break;
+
+            case MeterType.Water:
+                waterMeter = 0;
+                break;
+
+            case MeterType.Mineral:
+                mineralMeter = 0;
+                break;
+
+            case MeterType.Sun:
+                sunMeter = 0;
+                break;
+        }
+    }
+
+    public void ResetMeters()
+    {
+       
+                loveMeter = 0;
+              
+                waterMeter = 0;
+              
+                mineralMeter = 0;
+               
+                sunMeter = 0;
+               
         
-        if (sunMeter > 0)
-            sunMeter -= Time.deltaTime * sunDepletion;
     }
 
     public void GrowTree()
@@ -82,23 +133,24 @@ public class GameManager : MonoBehaviour
         {
             growthPhase++;
 
+            if (growthPhase != 3)
+                ResetMeters();
+
             switch (growthPhase)
             {
-                // Seed
-                case 0:
-                    ChangeDepletionVariables(3F, 3F, 3F, 3F);
-                    break;
-
                 // Sprout
                 case 1:
+                    ChangeDepletionVariables(5F, 3F, 3F, 3F);
                     break;
 
                 // Sampling
                 case 2:
+                    ChangeDepletionVariables(4F, 3.5F, 3.5F, 2F);
                     break;
 
                 // Tree
                 case 3:
+                    ChangeDepletionVariables(0F, 0F, 0F, 0F);
                     break;
             }
 
@@ -123,17 +175,17 @@ public class GameManager : MonoBehaviour
 
     public void ChangeWaterLevel(float _num)
     {
-        loveMeter += _num;
+        waterMeter += _num;
     }
 
     public void ChangeMineralLevel(float _num)
     {
-        loveMeter += _num;
+        mineralMeter += _num;
     }
 
     public void ChangeSunLevel(float _num)
     {
-        loveMeter += _num;
+        sunMeter += _num;
     }
 
     #endregion

@@ -21,14 +21,14 @@ public class MeterManager : MonoBehaviour
                 break;
 
             case 1:
-                if (loveMeter.filled && waterMeter.filled && mineralMeter.filled && sunMeter.filled)
+                if (loveMeter.filled && waterMeter.filled && mineralMeter.filled)// && sunMeter.filled)
                 {
                     GameManager.Instance.GrowTree();
                 }
                 break;
 
             case 2:
-                if (loveMeter.filled && waterMeter.filled && mineralMeter.filled && sunMeter.filled)
+                if (loveMeter.filled && waterMeter.filled && mineralMeter.filled)// && sunMeter.filled)
                 {
                     GameManager.Instance.GrowTree();
                 }
