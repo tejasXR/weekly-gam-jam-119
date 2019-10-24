@@ -26,9 +26,7 @@ public class CameraManager : MonoBehaviour
     {
         GameManager.TreeGrowCallback -= ChangeCamera;
     }
-
     
-
     private void Update()
     {
         Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPositions[currentCameraView].position, Time.deltaTime * cameraMovSpeed);
