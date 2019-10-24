@@ -76,31 +76,34 @@ public class GameManager : MonoBehaviour
             sunMeter -= Time.deltaTime * sunDepletion;
     }
 
-    private void GrowTree()
+    public void GrowTree()
     {
-        growthPhase++;
-
-        switch (growthPhase)
+        if (growthPhase < 3)
         {
-            // Seed
-            case 0:
-                ChangeDepletionVariables(3F, 3F, 3F, 3F);
-                break;
+            growthPhase++;
 
-            // Sprout
-            case 1:
-                break;
+            switch (growthPhase)
+            {
+                // Seed
+                case 0:
+                    ChangeDepletionVariables(3F, 3F, 3F, 3F);
+                    break;
 
-            // Sampling
-            case 2:
-                break;
+                // Sprout
+                case 1:
+                    break;
 
-            // Tree
-            case 3:
-                break;
-        }
+                // Sampling
+                case 2:
+                    break;
 
-        OnTreeGrow();
+                // Tree
+                case 3:
+                    break;
+            }
+
+            OnTreeGrow();
+        }                
     }
 
     private void ChangeDepletionVariables(float _loveDepletion, float _waterDepletion, float _mineralDepletion, float _sunDepletion)

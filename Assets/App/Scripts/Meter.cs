@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Meter : MonoBehaviour
 {
     public GameManager.MeterType meterType;
-
+    public bool filled;
     public Image meterFill;
 
     private void Update()
@@ -38,5 +38,19 @@ public class Meter : MonoBehaviour
         rT.offsetMax = new Vector2(_meterVariable - 250, rT.offsetMax.y);
 
         meterFill.rectTransform.offsetMax = rT.offsetMax;
+
+        CheckMeterFull();
+    }
+
+    private void CheckMeterFull()
+    {       
+        if (meterFill.rectTransform.offsetMax.x < 2)
+        {
+            filled = true;
+        }
+        else
+        {
+            filled = false;
+        }
     }
 }
